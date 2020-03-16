@@ -1,0 +1,12 @@
+<p>Students</p>
+
+<div *ngIf="!(studentsLoading$ | async); else spinner">
+  <div *ngIf="!(studentLoaded$ | async)">Loaded succesfully...</div>
+  <ul *ngFor ="let student of (students$ | async)">
+    <li>{{ student.id }} - {{ student.name }}</li>
+  </ul>
+</div>
+
+<ng-template #spinner>
+  Loading...
+</ng-template>

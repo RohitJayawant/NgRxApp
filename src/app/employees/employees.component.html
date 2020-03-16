@@ -1,0 +1,5 @@
+<p>employees works!</p>
+
+<ul *ngFor ="let employee of (employees$ | async)">
+    <li>{{ employee.id }} - {{ employee.name }}</li>
+</ul>
