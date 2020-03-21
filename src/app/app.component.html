@@ -1,6 +1,14 @@
-
 <button routerLink="/employees">Employees</button>
 <button routerLink="/students">Students</button>
 <button routerLink="">Home</button>
+
+<br/>
+<br/>
+<input type="text" id="txtSearch"><br/>
+
+Search: <br/>
+<ul *ngFor ="let student of (searchstudents$ | async)">
+    <li>{{ student.id }} - {{ student.name }}</li>
+</ul>
 
 <router-outlet></router-outlet>

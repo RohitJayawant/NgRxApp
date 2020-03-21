@@ -25,7 +25,6 @@ export function reducer(
                 loading: true
             }
         }
-
         case fromStudents.LOAD_STUDENTS_SUCCESS: {
             const data = action.payload;
             return {
@@ -35,14 +34,36 @@ export function reducer(
                 data
             }
         }
-
         case fromStudents.LOAD_STUDENTS_FAIL: {
             return {
                 ...state,                    
                 loading: false,
                 loaded: false
             }
-        }           
+        }    
+        
+        case fromStudents.SEARCH_STUDENTS: {
+            return {
+                ...state,                    
+                loading: true
+            }
+        }
+        case fromStudents.SEARCH_STUDENTS_SUCCESS: {
+            const data = action.payload;
+            return {
+                ...state,                    
+                loading: false,
+                loaded: true,
+                data
+            }
+        }
+        case fromStudents.SEARCH_STUDENTS_FAIL: {
+            return {
+                ...state,                    
+                loading: false,
+                loaded: false
+            }
+        }    
     }
 
     return state;

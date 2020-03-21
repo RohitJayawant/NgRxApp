@@ -19,8 +19,18 @@ export class StudentsEffects{
                 map(students => new studentActions.LoadStudentsSuccess(students)),
                 catchError(error => of(new studentActions.LoadStudentsFail(error)))
             )
+        })    
+    );
+
+    @Effect()
+    searchStudents$ = this.actions$.pipe(
+        ofType<studentActions.SearchStudents>(studentActions.SEARCH_STUDENTS),
+        switchMap((action) => {
+            return this.studentService.searchStudents(action.payload).pipe(
+                map(students => new studentActions.SearchStudentsSuccess(students)),
+                catchError(error => of(new studentActions.SearchStudentsFail(error)))
+            )
         })
-    
     );
 }
 

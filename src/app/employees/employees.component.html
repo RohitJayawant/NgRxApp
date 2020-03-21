@@ -3,3 +3,13 @@
 <ul *ngFor ="let employee of (employees$ | async)">
     <li>{{ employee.id }} - {{ employee.name }}</li>
 </ul>
+
+<hr/>
+
+
+<div class="divClass">
+    <p>results works!</p>
+    <ul *ngFor ="let student of (searchstudents$ | async)">
+        <li>{{ student.id }} - {{ student.name }}</li>
+    </ul>
+</div>

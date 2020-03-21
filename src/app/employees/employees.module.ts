@@ -9,7 +9,7 @@ import { EmployeesComponent } from './employees.component';
   declarations: [EmployeesComponent],
   imports: [
     CommonModule,
-    EmployeesRoutingModule
+    EmployeesRoutingModule,    
   ]
 })
 export class EmployeesModule { }
